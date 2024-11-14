@@ -1,7 +1,10 @@
 version: 0.2
 env:
+<<<<<<< HEAD
   variables:
     ECR_REPO_NAME: my-angular-app
+=======
+>>>>>>> 7781d81550d4052ebd52a83126876532f898d917
   parameter-store:
     DOCKERHUB_TOKEN: /dockerhub/token
     DOCKERHUB_USER: /dockerhub/user
@@ -21,5 +24,10 @@ phases:
       - docker build -t my-angular-app:latest .
   post_build:
     commands:
+<<<<<<< HEAD
       - docker tag my-angular-app:latest ${ECR_IMAGE_URI}
       - docker push ${ECR_IMAGE_URI}
+=======
+      - docker tag my-angular-app:latest ${DOCKERHUB_USER}/my-angular-app:latest
+      - docker push ${DOCKERHUB_USER}/my-angular-app:latest
+>>>>>>> 7781d81550d4052ebd52a83126876532f898d917
